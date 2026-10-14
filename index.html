@@ -32,7 +32,10 @@
 </header>
 <main id="contenu">
 
-<section class="hero">
+<section class="hero-couv">
+  <img class="hero-fond" src="img/couverture-inspiration.jpg" alt="" fetchpriority="high">
+  <div class="hero-voile"></div>
+  <svg class="hero-arc" viewBox="0 0 520 640" aria-hidden="true"><path d="M30 640V280a230 230 0 0 1 460 0v300"/><path class="abat-jour" d="M490 568l34 30h-68z"/><path class="abat-jour" d="M30 330l-26 56h52z"/></svg>
   <div class="conteneur">
     <div class="hero-texte">
       <p class="surtitre">Décorateur d'intérieur · Abidjan</p>
@@ -40,17 +43,12 @@
       <p class="chapeau">Aménagement, rénovation et décoration : une seule équipe pour imaginer, construire et sublimer vos espaces, partout en Côte d'Ivoire.</p>
       <div class="hero-actions">
         <a class="btn btn-plein" href="contact.html">Demander un devis</a>
-        <a class="btn btn-contour" href="realisations.html">Voir nos réalisations</a>
+        <a class="btn btn-blanc-contour" href="realisations.html">Voir nos réalisations</a>
       </div>
       <div class="hero-zone">
         <span><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58s18-18 18-32a18 18 0 0 0-36 0c0 14 18 32 18 32z"/><circle cx="32" cy="26" r="6"/></svg> Abidjan et toute la Côte d'Ivoire</span>
         <span><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8l8 12-5 5a30 30 0 0 0 16 16l5-5 12 8-4 8c-20 2-42-20-40-40z"/></svg> <a href="tel:+2250708432774">+225 07 08 43 27 74</a></span>
       </div>
-    </div>
-    <div class="arche">
-      <div class="arche-cadre"><img src="img/chambre-mur-3d.jpg" alt="Chambre aménagée par JJ Fait la Déco : mur 3D, appliques et lustre à globes" fetchpriority="high"></div>
-      <svg class="arche-trait" viewBox="0 0 506 600" aria-hidden="true"><path d="M6 400V253a247 247 0 0 1 494 0v307"/><path class="abat-jour" d="M500 552l26 22h-52z"/></svg>
-      <div class="arche-badge"><b>50+</b><span>projets livrés</span></div>
     </div>
   </div>
 </section>
@@ -150,12 +148,30 @@
   </div>
 </section>
 
+<section class="boutique">
+  <div class="conteneur">
+    <div class="boutique-bloc">
+      <div class="boutique-texte revele">
+        <p class="surtitre">Boutiques & espaces pro</p>
+        <h2 class="titre-section">Votre commerce, <em>aménagé de A à Z</em></h2>
+        <p class="chapeau">Rayonnages sur mesure, comptoirs, plafonds habillés de bois, gorges lumineuses, sanitaires : nous aménageons boutiques, showrooms et bureaux pour qu'ils donnent envie d'entrer.</p>
+        <ul class="liste-coches"><li>Mobilier et rayonnages sur mesure</li><li>Faux plafonds et éclairage</li><li>Comptoirs et caisses</li><li>Sanitaires et finitions</li></ul>
+        <div><a class="btn btn-plein" href="contact.html">Parler de mon local</a></div>
+      </div>
+      <div class="video-arche revele d1">
+        <video id="video-boutique" src="img/boutique-amenagement.mp4" poster="img/boutique-amenagement-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Visite vidéo d'une boutique aménagée par JJ Fait la Déco"></video>
+        <button type="button" class="btn-son" aria-pressed="false" aria-controls="video-boutique"><span class="son-off">Activer le son</span><span class="son-on">Couper le son</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-top:0">
   <div class="conteneur">
     <div class="etapes-bloc">
       <div class="etapes-photos revele">
+        <img src="img/double-faux-plafond-led.jpg" alt="Double faux plafond avec gorges LED en fin de chantier" loading="lazy">
         <img src="img/mur-tv-placo-chantier.jpg" alt="Mur TV en placo avec LED en cours de pose" loading="lazy">
-        <img src="img/faux-plafond-chantier.jpg" alt="Pose d'un faux plafond sur un chantier" loading="lazy">
       </div>
       <div class="revele d1" style="display:grid;gap:22px;min-width:0">
         <div class="entete-section" style="margin:0">
@@ -177,18 +193,31 @@
   <div class="conteneur">
     <div class="entete-section centre revele">
       <p class="surtitre">Nos engagements</p>
-      <h2 class="titre-section">Pourquoi nous <em>confier</em> votre intérieur</h2>
+      <h2 class="titre-section">Pourquoi nous confier votre intérieur</h2>
     </div>
-    <div class="grille-engagements revele">
-      <div class="engagement" tabindex="0"><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14h44v28H30l-10 9v-9H10z"/><path d="M20 25h24M20 32h16"/></svg><h3>Écoute et conseil</h3><p>On part de vos goûts, de votre façon de vivre et de votre budget avant de proposer quoi que ce soit.</p></div>
-      <div class="engagement" tabindex="0"><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="20" r="8"/><path d="M18 52c0-8 6-14 14-14s14 6 14 14"/><circle cx="12" cy="28" r="5"/><circle cx="52" cy="28" r="5"/></svg><h3>Un seul interlocuteur</h3><p>JJ coordonne tous les corps de métier, du placo à la décoration. Vous n'avez qu'un numéro à appeler.</p></div>
-      <div class="engagement" tabindex="0"><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="18" y="6" width="28" height="52" rx="4"/><path d="M28 50h8"/><path d="M24 22l5 5 10-10"/><path d="M24 36h16"/></svg><h3>Suivi sur WhatsApp</h3><p>Photos et nouvelles du chantier à chaque étape, même si vous habitez loin ou à l'étranger.</p></div>
-      <div class="engagement" tabindex="0"><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 6l7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 23l16-2z"/></svg><h3>Finitions soignées</h3><p>Avec plus de 100 fournisseurs, nous trouvons le bon matériau pour chaque projet et chaque budget.</p></div>
+    <div class="grille-engagements">
+      <div class="engagement revele" tabindex="0">
+        <svg class="icone-pleine" viewBox="0 0 64 64" fill="#fff" aria-hidden="true"><path d="M8 12a6 6 0 0 1 6-6h36a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6H28l-12 11v-11h-2a6 6 0 0 1-6-6z"/><circle cx="21" cy="24" r="3.4" fill="var(--terracotta)"/><circle cx="32" cy="24" r="3.4" fill="var(--terracotta)"/><circle cx="43" cy="24" r="3.4" fill="var(--terracotta)"/></svg><h3>Écoute et conseil</h3>
+        <small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small>
+        <p>On part de vos goûts, de votre façon de vivre et de votre budget avant de proposer quoi que ce soit.</p>
+      </div><div class="engagement revele d1" tabindex="0">
+        <svg class="icone-pleine" viewBox="0 0 64 64" fill="#fff" aria-hidden="true"><circle cx="32" cy="17" r="10"/><path d="M14 56c0-11 8-19 18-19s18 8 18 19z"/><circle cx="11" cy="25" r="6"/><circle cx="53" cy="25" r="6"/><path d="M1 50c0-8 4-13 10-13 3 0 5 1 7 3-3 3-5 6-6 10z"/><path d="M63 50c0-8-4-13-10-13-3 0-5 1-7 3 3 3 5 6 6 10z"/></svg><h3>Un seul interlocuteur</h3>
+        <small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small>
+        <p>JJ coordonne tous les corps de métier, du placo à la décoration. Vous n'avez qu'un numéro à appeler.</p>
+      </div><div class="engagement revele d2" tabindex="0">
+        <svg class="icone-pleine" viewBox="0 0 64 64" fill="#fff" aria-hidden="true"><rect x="16" y="4" width="32" height="56" rx="6"/><rect x="21" y="12" width="22" height="34" rx="2" fill="var(--terracotta)"/><path d="M25.5 29l4.5 4.5 9-9" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="53" r="2.6" fill="var(--terracotta)"/></svg><h3>Suivi sur WhatsApp</h3>
+        <small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small>
+        <p>Photos et nouvelles du chantier à chaque étape, même si vous habitez loin ou à l'étranger.</p>
+      </div><div class="engagement revele d3" tabindex="0">
+        <svg class="icone-pleine" viewBox="0 0 64 64" fill="#fff" aria-hidden="true"><path d="M32 4l8.6 17.6 19.4 2.8-14 13.7 3.3 19.3L32 48.3 14.7 57.4 18 38.1 4 24.4l19.4-2.8z"/></svg><h3>Finitions soignées</h3>
+        <small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small>
+        <p>Avec plus de 100 fournisseurs, nous trouvons le bon matériau pour chaque projet et chaque budget.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="conteneur">
     <div class="apropos-bloc">
       <div class="apropos-photo revele"><img src="img/portrait-jj.jpg" alt="JJ, fondateur de JJ Fait la Déco, en casque de chantier" loading="lazy"></div>

@@ -79,6 +79,24 @@
     });
   });
 
+  /* Engagements : affichage du détail au toucher */
+  document.querySelectorAll(".engagement").forEach(function (eng) {
+    eng.addEventListener("click", function () {
+      if (matchMedia("(hover: none)").matches) eng.classList.toggle("ouvert");
+    });
+  });
+
+  /* Vidéo de la boutique : bouton son */
+  document.querySelectorAll(".btn-son").forEach(function (btn) {
+    var video = document.getElementById(btn.getAttribute("aria-controls"));
+    if (!video) return;
+    btn.addEventListener("click", function () {
+      video.muted = !video.muted;
+      if (!video.muted) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      btn.setAttribute("aria-pressed", String(!video.muted));
+    });
+  });
+
   /* Comparateur avant / après */
   document.querySelectorAll(".comparateur").forEach(function (comp) {
     var curseur = comp.querySelector("input");
@@ -105,8 +123,16 @@
   function legende(t) { var b = t.querySelector(".legende b"); return b ? b.textContent : ""; }
   function afficher() {
     var t = liste[index];
-    vis.querySelector("img").src = t.getAttribute("data-src");
-    vis.querySelector("img").alt = t.querySelector("img").alt;
+    var zone = vis.querySelector(".vis-image");
+    var src = t.getAttribute("data-video");
+    if (src) {
+      zone.innerHTML = '<video controls autoplay playsinline></video>';
+      zone.querySelector("video").src = src;
+    } else {
+      zone.innerHTML = '<img alt="">';
+      zone.querySelector("img").src = t.getAttribute("data-src");
+      zone.querySelector("img").alt = t.querySelector("img").alt;
+    }
     vis.querySelector("p").textContent = legende(t) + "  ·  " + (index + 1) + " / " + liste.length;
   }
   function fermer() { if (vis) { vis.remove(); vis = null; document.body.style.overflow = ""; } }
