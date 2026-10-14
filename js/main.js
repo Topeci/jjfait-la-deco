@@ -1,7 +1,7 @@
 /* JJ Fait la Déco — scripts du site */
 (function () {
   "use strict";
-  var WHATSAPP = "2250708432774";
+  var WHATSAPP = "2250103778817";
   document.documentElement.classList.add("js");
 
   /* En-tête qui se réduit au défilement */
