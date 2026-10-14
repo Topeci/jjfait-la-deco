@@ -28,5 +28,9 @@
 
    Les chantiers sont séparés par une virgule.
 */
-window.VISITES = [
-];
+window.VISITES = [{ nom: "Démo", pieces: [
+ { id: "sejour", titre: "Séjour", image: "img/visites/demo-sejour.jpg", angle: 280, depart: -45,
+   passages: [{ vers: "couloir", direction: 95, titre: "Couloir" }],
+   points: [{ direction: -49, hauteur: -13, texte: "Table à manger" }, { direction: -84, hauteur: -2, texte: "Espace bureau" }] },
+ { id: "couloir", titre: "Couloir", image: "img/visites/demo-sejour.jpg", angle: 280, depart: 100,
+   passages: [{ vers: "sejour", direction: 20, titre: "Retour au séjour" }] } ] }];
