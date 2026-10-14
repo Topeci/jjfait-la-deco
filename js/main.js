@@ -165,20 +165,12 @@
 
   /* Avant / après : changement de projet */
   document.querySelectorAll(".avant-apres").forEach(function (bloc) {
-    var comp = bloc.querySelector(".comparateur");
-    var av = comp.querySelector("img.avant"), ap = comp.querySelector("img.apres");
-    var curseur = comp.querySelector("input"), texte = bloc.querySelector(".aa-texte");
-    bloc.querySelectorAll(".aa-onglets button").forEach(function (b) {
+    var boutons = bloc.querySelectorAll(".aa-onglets button");
+    var projets = bloc.querySelectorAll(".aa-projet");
+    boutons.forEach(function (b) {
       b.addEventListener("click", function () {
-        bloc.querySelectorAll(".aa-onglets button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        comp.classList.add("change");
-        setTimeout(function () {
-          av.src = b.dataset.avant; av.alt = b.dataset.altAvant; av.style.objectPosition = b.dataset.posAvant;
-          ap.src = b.dataset.apres; ap.alt = b.dataset.altApres; ap.style.objectPosition = b.dataset.posApres;
-          texte.textContent = b.dataset.texte;
-          curseur.value = 50; comp.style.setProperty("--pos", "50%");
-          comp.classList.remove("change");
-        }, 250);
+        boutons.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        projets.forEach(function (p) { p.classList.toggle("actif", p.dataset.projet === b.dataset.projet); });
       });
     });
   });
@@ -410,6 +402,18 @@
       obs360.observe(blocVisites);
     } else { charger(); }
   }
+
+  /* Bouton pour remonter en haut de page */
+  var haut = document.createElement("button");
+  haut.type = "button"; haut.className = "haut-page"; haut.setAttribute("aria-label", "Remonter en haut de la page");
+  haut.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(haut);
+  haut.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+  function majHaut() { haut.classList.toggle("visible", window.scrollY > window.innerHeight * 0.8); }
+  window.addEventListener("scroll", majHaut, { passive: true });
+  majHaut();
 
   /* Année du pied de page */
   document.querySelectorAll("[data-annee]").forEach(function (el) { el.textContent = new Date().getFullYear(); });

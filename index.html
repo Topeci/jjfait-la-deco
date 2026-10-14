@@ -134,19 +134,33 @@
       <div class="texte revele">
         <p class="surtitre">Avant / après</p>
         <h2 class="titre-section">Du chantier au <em>résultat final</em></h2>
-        <p class="chapeau">Faites glisser le curseur pour comparer, et passez d'un projet à l'autre avec les onglets.</p>
+        <p class="chapeau">Faites glisser le curseur pour comparer chaque projet avant et après nos travaux.</p>
         <a class="lien-fleche" href="realisations.html">Voir d'autres chantiers</a>
       </div>
       <div class="revele d1"><div class="avant-apres">
-        <div class="aa-onglets" role="group" aria-label="Choisir un projet"><button type="button" class="puce" aria-pressed="true" data-avant="img/studio-avant.jpg" data-apres="img/studio-apres.jpg" data-pos-avant="center 38%" data-pos-apres="center 50%" data-alt-avant="Avant : studio en chantier, faux plafond rond et niche en arche" data-alt-apres="Après : studio meublé avec cuisine, faux plafond lumineux et coin nuit" data-texte="Faux plafond ovale à gorge LED, cuisine équipée, coin nuit et mobilier : ce studio est passé du chantier à un logement prêt à louer.">Studio meublé</button><button type="button" class="puce" aria-pressed="false" data-avant="img/chantier-drone-perspective.jpg" data-apres="img/facade-finie.jpg" data-pos-avant="center" data-pos-apres="center" data-alt-avant="Avant : la villa en gros œuvre, sans toiture" data-alt-apres="Après : la façade terminée avec portail et habillage bois" data-texte="Cette villa est passée du gros œuvre à une façade soignée : portail, habillage bois, enduits et éclairage extérieur.">Façade de villa</button></div>
-        <div class="comparateur" style="--pos:50%">
-          <img class="avant" src="img/studio-avant.jpg" alt="Avant : studio en chantier, faux plafond rond et niche en arche" style="object-position:center 38%" loading="lazy">
-          <img class="apres" src="img/studio-apres.jpg" alt="Après : studio meublé avec cuisine, faux plafond lumineux et coin nuit" style="object-position:center 50%" loading="lazy">
-          <span class="etiquette g">Avant</span><span class="etiquette d">Après</span>
-          <input id="curseur-avant-apres-accueil" type="range" min="0" max="100" value="50" aria-label="Glisser pour comparer avant et après">
-          <span class="poignee"></span>
+        <div class="aa-onglets" role="group" aria-label="Choisir un projet"><button type="button" class="puce" aria-pressed="true" data-projet="0">Studio meublé</button><button type="button" class="puce" aria-pressed="false" data-projet="1">Façade de villa</button></div>
+        <div class="aa-projet actif" data-projet="0">
+          <p class="aa-nom">Studio meublé</p>
+          <div class="comparateur" style="--pos:50%">
+            <img class="avant" src="img/studio-avant.jpg" alt="Avant : studio vide aux murs nus, simple plafonnier et matelas au sol" style="object-position:center 52%" loading="lazy">
+            <img class="apres" src="img/studio-apres.jpg" alt="Après : studio meublé avec cuisine, faux plafond lumineux et coin nuit" style="object-position:center 50%" loading="lazy">
+            <span class="etiquette g">Avant</span><span class="etiquette d">Après</span>
+            <input id="curseur-accueil-0" type="range" min="0" max="100" value="50" aria-label="Glisser pour comparer avant et après : Studio meublé">
+            <span class="poignee"></span>
+          </div>
+          <p class="aa-texte">Faux plafond ovale à gorge LED, cuisine équipée, coin nuit et mobilier : ce studio est passé du chantier à un logement prêt à louer.</p>
         </div>
-        <p class="aa-texte">Faux plafond ovale à gorge LED, cuisine équipée, coin nuit et mobilier : ce studio est passé du chantier à un logement prêt à louer.</p>
+        <div class="aa-projet" data-projet="1">
+          <p class="aa-nom">Façade de villa</p>
+          <div class="comparateur" style="--pos:50%">
+            <img class="avant" src="img/chantier-drone-perspective.jpg" alt="Avant : la villa en gros œuvre, sans toiture" style="object-position:center" loading="lazy">
+            <img class="apres" src="img/facade-finie.jpg" alt="Après : la façade terminée avec portail et habillage bois" style="object-position:center" loading="lazy">
+            <span class="etiquette g">Avant</span><span class="etiquette d">Après</span>
+            <input id="curseur-accueil-1" type="range" min="0" max="100" value="50" aria-label="Glisser pour comparer avant et après : Façade de villa">
+            <span class="poignee"></span>
+          </div>
+          <p class="aa-texte">Cette villa est passée du gros œuvre à une façade soignée : portail, habillage bois, enduits et éclairage extérieur.</p>
+        </div>
       </div></div>
     </div>
   </div>
