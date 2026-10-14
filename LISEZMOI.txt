@@ -1,0 +1,20 @@
+JJ FAIT LA DÉCO — site internet
+================================
+
+METTRE EN LIGNE SUR NETLIFY
+1. Ouvrir https://app.netlify.com/drop
+2. Glisser-déposer le dossier du site (celui qui contient index.html).
+3. Le site est en ligne. Dans "Domain settings", vous pouvez lui donner un nom
+   (ex. jjfaitladeco.netlify.app) ou brancher un vrai nom de domaine.
+
+AJOUTER LES AVIS CLIENTS
+Ouvrir js/avis.js et ajouter les vrais avis entre les crochets (le modèle est dans le fichier).
+La section "Ils nous ont fait confiance" apparaît automatiquement dès qu'il y a un avis.
+
+CHANGER UNE PHOTO
+Remplacer le fichier dans le dossier img/ en gardant le même nom.
+
+FICHIERS DU LOGO
+img/logo-jjfait-la-deco.svg  (fond terracotta, lettres blanches)
+img/logo-terracotta.svg      (fond transparent, lettres terracotta)
+img/favicon.svg              (icône d'onglet)
