@@ -286,6 +286,13 @@ section { padding-block: clamp(64px, 8vw, 112px); }
 .etiquette { position: absolute; top: 16px; z-index: 1; background: rgba(255, 255, 255, .92); color: var(--encre); font-size: var(--t-xs); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; pointer-events: none; }
 .etiquette.g { left: 16px; } .etiquette.d { right: 16px; background: var(--terracotta); color: var(--blanc); }
 
+.avant-apres { display: grid; gap: 14px; min-width: 0; }
+.aa-onglets { display: flex; flex-wrap: wrap; gap: 8px; }
+.aa-onglets .puce[aria-pressed="true"] { background: var(--terracotta); border-color: var(--terracotta); color: var(--blanc); }
+.comparateur img { transition: opacity .25s ease-out; }
+.comparateur.change img { opacity: 0; }
+.aa-texte { font-size: var(--t-s); color: var(--gris); }
+
 /* Étapes */
 .etapes-bloc { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
 @media (max-width: 860px) { .etapes-bloc { grid-template-columns: 1fr; } }

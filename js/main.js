@@ -163,6 +163,26 @@
     });
   });
 
+  /* Avant / après : changement de projet */
+  document.querySelectorAll(".avant-apres").forEach(function (bloc) {
+    var comp = bloc.querySelector(".comparateur");
+    var av = comp.querySelector("img.avant"), ap = comp.querySelector("img.apres");
+    var curseur = comp.querySelector("input"), texte = bloc.querySelector(".aa-texte");
+    bloc.querySelectorAll(".aa-onglets button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        bloc.querySelectorAll(".aa-onglets button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        comp.classList.add("change");
+        setTimeout(function () {
+          av.src = b.dataset.avant; av.alt = b.dataset.altAvant; av.style.objectPosition = b.dataset.posAvant;
+          ap.src = b.dataset.apres; ap.alt = b.dataset.altApres; ap.style.objectPosition = b.dataset.posApres;
+          texte.textContent = b.dataset.texte;
+          curseur.value = 50; comp.style.setProperty("--pos", "50%");
+          comp.classList.remove("change");
+        }, 250);
+      });
+    });
+  });
+
   /* Comparateur avant / après */
   document.querySelectorAll(".comparateur").forEach(function (comp) {
     var curseur = comp.querySelector("input");
