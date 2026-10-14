@@ -537,6 +537,27 @@ a.info:hover { border-color: var(--terracotta); transform: translateX(4px); }
 .catalogue-apercu:hover .p3 { transform: rotate(12deg) translate(56px, 6px); }
 .catalogue-poids { font-size: var(--t-s); color: var(--gris); align-self: center; }
 
+/* Visites 360° */
+.visites { background: var(--blanc); }
+.visite-onglets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.visite-cadre { position: relative; height: clamp(380px, 62vh, 640px); border-radius: var(--rayon); overflow: hidden; background: var(--charbon); box-shadow: var(--ombre); }
+.visite-vue { position: absolute; inset: 0; }
+.visite-vue .pnlm-container { background: var(--charbon); font-family: var(--f-texte); }
+.visite-aide { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); background: rgba(20, 16, 15, .72); color: var(--blanc); padding: 12px 20px; border-radius: 999px; font-size: var(--t-s); pointer-events: none; transition: opacity .6s; display: flex; gap: 10px; }
+.visite-aide.cache { opacity: 0; }
+.visite-pieces { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 16px; }
+.visite-pieces button { font: 500 var(--t-s) var(--f-texte); color: var(--blanc); background: rgba(20, 16, 15, .7); border: 1px solid rgba(255, 255, 255, .2); border-radius: 999px; padding: 8px 16px; cursor: pointer; transition: background .2s, border-color .2s; }
+.visite-pieces button:hover, .visite-pieces button[aria-pressed="true"] { background: var(--terracotta); border-color: var(--terracotta); }
+.visite-onglets .puce[aria-pressed="true"] { background: var(--terracotta); border-color: var(--terracotta); color: var(--blanc); }
+.visite-point, .visite-passage { position: relative; cursor: pointer; }
+.visite-point { width: 28px; height: 28px; border-radius: 50%; background: var(--terracotta); border: 2px solid var(--blanc); animation: onde360 2.2s infinite; }
+.visite-passage { width: 52px; height: 52px; border-radius: 50%; background: rgba(255, 255, 255, .9); box-shadow: 0 6px 20px rgba(0, 0, 0, .35); }
+.visite-passage::after { content: ""; position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; border-top: 3px solid var(--terracotta); border-right: 3px solid var(--terracotta); transform: translate(-65%, -50%) rotate(45deg); }
+.visite-point span, .visite-passage span { visibility: hidden; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--blanc); color: var(--encre); font: 500 var(--t-s) var(--f-texte); padding: 6px 12px; border-radius: 8px; }
+.visite-passage span { visibility: visible; }
+.visite-point:hover span { visibility: visible; }
+@keyframes onde360 { from { box-shadow: 0 0 0 0 rgba(151, 64, 47, .6); } to { box-shadow: 0 0 0 14px rgba(151, 64, 47, 0); } }
+
 /* Apparition au défilement */
 .js .revele { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
 .js .revele.visible { opacity: 1; transform: none; }

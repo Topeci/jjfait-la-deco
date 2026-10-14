@@ -292,6 +292,105 @@
     });
   }
 
+  /* Visites 360° des chantiers */
+  var blocVisites = document.getElementById("visites");
+  var visites = window.VISITES || [];
+  if (blocVisites && visites.length) {
+    blocVisites.hidden = false;
+    var lien = document.createElement("link");
+    lien.rel = "stylesheet"; lien.href = "css/pannellum.css";
+    document.head.appendChild(lien);
+    var visionneuse360 = null;
+    var onglets = document.getElementById("visite-onglets");
+    var zonePieces = document.getElementById("visite-pieces");
+    var aide360 = document.getElementById("visite-aide");
+
+    function etiquette(div, texte) {
+      var s = document.createElement("span");
+      s.textContent = texte;
+      div.appendChild(s);
+    }
+    function scenes(chantier) {
+      var res = {};
+      chantier.pieces.forEach(function (p) {
+        var angle = p.angle || 360;
+        var hauteur = angle >= 360 ? 180 : Math.min(180, angle / 4.3);
+        var cfg = {
+          type: "equirectangular", panorama: p.image,
+          yaw: p.depart || 0, hfov: 95,
+          hotSpots: []
+        };
+        if (angle < 360) {
+          cfg.haov = angle; cfg.vaov = hauteur;
+          cfg.minPitch = -hauteur / 2; cfg.maxPitch = hauteur / 2;
+          cfg.minYaw = -angle / 2; cfg.maxYaw = angle / 2;
+        }
+        (p.passages || []).forEach(function (l) {
+          cfg.hotSpots.push({ type: "scene", sceneId: l.vers, yaw: l.direction, pitch: l.hauteur || -6,
+            cssClass: "visite-passage", createTooltipFunc: etiquette, createTooltipArgs: l.titre });
+        });
+        (p.points || []).forEach(function (pt) {
+          cfg.hotSpots.push({ type: "info", yaw: pt.direction, pitch: pt.hauteur || 0,
+            cssClass: "visite-point", createTooltipFunc: etiquette, createTooltipArgs: pt.texte });
+        });
+        res[p.id] = cfg;
+      });
+      return res;
+    }
+    function boutonsPieces(chantier) {
+      zonePieces.innerHTML = "";
+      chantier.pieces.forEach(function (p) {
+        var b = document.createElement("button");
+        b.type = "button"; b.textContent = p.titre; b.dataset.id = p.id;
+        b.addEventListener("click", function () { visionneuse360.loadScene(p.id); });
+        zonePieces.appendChild(b);
+      });
+    }
+    function marquerPiece(id) {
+      zonePieces.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.id === id)); });
+    }
+    function ouvrir(index) {
+      var chantier = visites[index];
+      onglets.querySelectorAll("button").forEach(function (b, i) { b.setAttribute("aria-pressed", String(i === index)); });
+      if (visionneuse360) visionneuse360.destroy();
+      visionneuse360 = window.pannellum.viewer("visite-vue", {
+        "default": { firstScene: chantier.pieces[0].id, sceneFadeDuration: 900, autoLoad: true,
+          autoRotate: -2, autoRotateInactivityDelay: 8000, showControls: false, compass: false },
+        scenes: scenes(chantier)
+      });
+      visionneuse360.on("scenechange", marquerPiece);
+      visionneuse360.on("mousedown", function () { aide360.classList.add("cache"); });
+      visionneuse360.on("touchstart", function () { aide360.classList.add("cache"); });
+      boutonsPieces(chantier);
+      marquerPiece(chantier.pieces[0].id);
+    }
+    function demarrer() {
+      if (visites.length > 1) {
+        visites.forEach(function (c, i) {
+          var b = document.createElement("button");
+          b.type = "button"; b.className = "puce"; b.textContent = c.nom;
+          b.addEventListener("click", function () { ouvrir(i); });
+          onglets.appendChild(b);
+        });
+      } else {
+        onglets.hidden = true;
+      }
+      ouvrir(0);
+      setTimeout(function () { aide360.classList.add("cache"); }, 7000);
+    }
+    var lancee = false;
+    function charger() {
+      if (lancee) return; lancee = true;
+      var sc = document.createElement("script");
+      sc.src = "js/pannellum.js"; sc.onload = demarrer;
+      document.body.appendChild(sc);
+    }
+    if ("IntersectionObserver" in window) {
+      var obs360 = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { charger(); obs360.disconnect(); } }, { rootMargin: "400px" });
+      obs360.observe(blocVisites);
+    } else { charger(); }
+  }
+
   /* Année du pied de page */
   document.querySelectorAll("[data-annee]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
