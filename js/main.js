@@ -79,6 +79,72 @@
     });
   });
 
+  /* Diaporama de couverture */
+  var diaporama = document.querySelector(".diaporama");
+  if (diaporama) {
+    var diapos = diaporama.querySelectorAll(".diapo");
+    var points = diaporama.querySelectorAll(".diapo-points button");
+    var courant = 0, minuteur = null;
+    var calme = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function montrer(n) {
+      courant = (n + diapos.length) % diapos.length;
+      diapos.forEach(function (d, i) {
+        var actif = i === courant;
+        d.classList.toggle("active", actif);
+        if (actif) d.removeAttribute("aria-hidden"); else d.setAttribute("aria-hidden", "true");
+        var img = d.querySelector("img");
+        if (actif && img && img.loading === "lazy") img.loading = "eager";
+      });
+      points.forEach(function (p, i) { if (i === courant) p.setAttribute("aria-current", "true"); else p.removeAttribute("aria-current"); });
+    }
+    function relancer() {
+      clearInterval(minuteur);
+      if (!calme) minuteur = setInterval(function () { if (!document.hidden) montrer(courant + 1); }, 6500);
+    }
+    points.forEach(function (p, i) { p.addEventListener("click", function () { montrer(i); relancer(); }); });
+    var prec = diaporama.querySelector(".prec"), suiv = diaporama.querySelector(".suiv");
+    if (prec) prec.addEventListener("click", function () { montrer(courant - 1); relancer(); });
+    if (suiv) suiv.addEventListener("click", function () { montrer(courant + 1); relancer(); });
+    var xd = null;
+    diaporama.addEventListener("touchstart", function (e) { xd = e.touches[0].clientX; }, { passive: true });
+    diaporama.addEventListener("touchend", function (e) {
+      if (xd === null) return;
+      var dx = e.changedTouches[0].clientX - xd;
+      if (Math.abs(dx) > 50) { montrer(courant + (dx < 0 ? 1 : -1)); relancer(); }
+      xd = null;
+    });
+    /* précharge les photos suivantes après l'affichage */
+    window.addEventListener("load", function () { diapos.forEach(function (d) { var im = d.querySelector("img"); if (im) im.loading = "eager"; }); });
+    relancer();
+  }
+
+  /* Cartes prestations : ouverture au toucher sur mobile */
+  document.querySelectorAll(".carte-presta").forEach(function (carte) {
+    carte.addEventListener("click", function (e) {
+      if (e.target.closest("a")) return;
+      if (matchMedia("(hover: none)").matches) {
+        var ouvert = carte.classList.contains("ouvert");
+        document.querySelectorAll(".carte-presta.ouvert").forEach(function (c) { c.classList.remove("ouvert"); });
+        if (!ouvert) carte.classList.add("ouvert");
+      }
+    });
+  });
+
+  /* Parallaxe de la photo des compteurs */
+  var para = document.querySelector(".parallaxe");
+  if (para && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var bloc = para.parentElement, enAttente = false;
+    function deplacer() {
+      enAttente = false;
+      var r = bloc.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      var progres = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      para.style.transform = "translate3d(0," + (progres * -18).toFixed(2) + "%,0)";
+    }
+    window.addEventListener("scroll", function () { if (!enAttente) { enAttente = true; requestAnimationFrame(deplacer); } }, { passive: true });
+    deplacer();
+  }
+
   /* Engagements : affichage du détail au toucher */
   document.querySelectorAll(".engagement").forEach(function (eng) {
     eng.addEventListener("click", function () {

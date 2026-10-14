@@ -14,7 +14,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,25 +32,32 @@
 </header>
 <main id="contenu">
 
-<section class="hero-couv">
-  <img class="hero-fond" src="img/couverture-inspiration.jpg" alt="" fetchpriority="high">
-  <div class="hero-voile"></div>
-  <svg class="hero-arc" viewBox="0 0 520 640" aria-hidden="true"><path d="M30 640V280a230 230 0 0 1 460 0v300"/><path class="abat-jour" d="M490 568l34 30h-68z"/><path class="abat-jour" d="M30 330l-26 56h52z"/></svg>
-  <div class="conteneur">
-    <div class="hero-texte">
-      <p class="surtitre">Décorateur d'intérieur · Abidjan</p>
-      <h1><strong>JJ Fait la Déco</strong>Donnez vie à vos <em>intérieurs</em>, du chantier à la dernière touche</h1>
-      <p class="chapeau">Aménagement, rénovation et décoration : une seule équipe pour imaginer, construire et sublimer vos espaces, partout en Côte d'Ivoire.</p>
-      <div class="hero-actions">
-        <a class="btn btn-plein" href="contact.html">Demander un devis</a>
+<section class="diaporama" aria-roledescription="carrousel" aria-label="Présentation de JJ Fait la Déco">
+    <div class="diapo active">
+      <img class="diapo-fond" src="img/couverture-inspiration.jpg" alt="" style="object-position:center 62%" fetchpriority="high">
+      <div class="diapo-texte">
+        <h1 class="diapo-titre">Décoration &amp; <em>aménagement d'intérieur</em> à Abidjan</h1>
+        <p class="diapo-sous">JJ Fait la Déco intervient à Abidjan et dans toute la Côte d'Ivoire.</p>
+        <a class="btn btn-blanc-contour" href="tel:+2250708432774">Appelez-nous pour un devis</a>
+      </div>
+    </div><div class="diapo" aria-hidden="true">
+      <img class="diapo-fond" src="img/chambre-mur-3d.jpg" alt="" style="object-position:center 55%" loading="lazy">
+      <div class="diapo-texte">
+        <p class="diapo-titre">JJ <em>Fait la Déco</em></p>
+        <p class="diapo-sous">Votre décorateur pour tous vos travaux d'aménagement : placo, peinture, carrelage, éclairage et décoration.</p>
+        <a class="btn btn-blanc-contour" href="contact.html">Demandez un devis</a>
+      </div>
+    </div><div class="diapo" aria-hidden="true">
+      <img class="diapo-fond" src="img/bar-sous-escalier.jpg" alt="" style="object-position:center 50%" loading="lazy">
+      <div class="diapo-texte">
+        <p class="diapo-titre">Donnez vie à vos projets <em>de décoration</em></p>
+        <p class="diapo-sous">Des intérieurs modernes, lumineux et à votre image ? Vous êtes au bon endroit !</p>
         <a class="btn btn-blanc-contour" href="realisations.html">Voir nos réalisations</a>
       </div>
-      <div class="hero-zone">
-        <span><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58s18-18 18-32a18 18 0 0 0-36 0c0 14 18 32 18 32z"/><circle cx="32" cy="26" r="6"/></svg> Abidjan et toute la Côte d'Ivoire</span>
-        <span><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8l8 12-5 5a30 30 0 0 0 16 16l5-5 12 8-4 8c-20 2-42-20-40-40z"/></svg> <a href="tel:+2250708432774">+225 07 08 43 27 74</a></span>
-      </div>
     </div>
-  </div>
+    <button type="button" class="diapo-fleche prec" aria-label="Diapositive précédente">‹</button>
+    <button type="button" class="diapo-fleche suiv" aria-label="Diapositive suivante">›</button>
+    <div class="diapo-points"><button type="button" aria-label="Diapositive 1" aria-current="true"></button><button type="button" aria-label="Diapositive 2"></button><button type="button" aria-label="Diapositive 3"></button></div>
 </section>
 
 <div class="bandeau" aria-hidden="true"><div class="bandeau-piste"><span>Décoration intérieure</span><span>Peinture</span><span>Placo & faux plafonds</span><span>Carrelage</span><span>Revêtements sol & mur</span><span>Menuiserie</span><span>Électricité & éclairage</span><span>Plomberie</span><span>Décoration intérieure</span><span>Peinture</span><span>Placo & faux plafonds</span><span>Carrelage</span><span>Revêtements sol & mur</span><span>Menuiserie</span><span>Électricité & éclairage</span><span>Plomberie</span></div></div>
@@ -59,67 +66,60 @@
   <div class="conteneur">
     <div class="entete-section revele">
       <p class="surtitre">Nos prestations</p>
-      <h2 class="titre-section">Une équipe pour <em>tout</em> votre projet</h2>
+      <h2 class="titre-section">JJ Fait la Déco met à votre disposition une <span class="souligne">équipe expérimentée<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C60 6 120 5 170 8s90 6 126 2"/></svg></span></h2>
       <p class="chapeau">Particuliers, propriétaires de résidences meublées ou professionnels : nous intervenons du gros œuvre aux finitions décoratives.</p>
     </div>
-    <div class="grille-prestations"><div class="carte-retour revele" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 44V22a14 14 0 0 1 28 0v26"/><path d="M14 22l-7 14h14z" fill="currentColor"/><path d="M36 48h12l-6-5z" fill="currentColor"/><path d="M6 56h52"/></svg><div><h3>Décoration intérieure</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Décoration intérieure</h3><p>Couleurs, mobilier, luminaires et accessoires : nous composons une ambiance qui vous ressemble, de la chambre au salon.</p><a href="prestations.html#decoration">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d1" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="36" height="14" rx="2"/><path d="M46 15h6v12H30v8"/><rect x="26" y="35" width="8" height="21" rx="2"/></svg><div><h3>Peinture</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Peinture</h3><p>Peinture intérieure et extérieure, enduits et finitions décoratives, avec une préparation soignée des supports.</p><a href="prestations.html#peinture">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d2" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h52"/><path d="M10 12v6h44v-6"/><path d="M18 18v5h28v-5"/><path d="M24 30v26M40 30v26M24 43h16"/><circle cx="32" cy="27" r="2" fill="currentColor"/></svg><div><h3>Placo & faux plafonds</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Placo & faux plafonds</h3><p>Faux plafonds suspendus, corniches lumineuses, niches TV et cloisons en plaques de plâtre.</p><a href="prestations.html#placo">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d3" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="2"/><path d="M8 24h48M8 40h48M24 8v48M40 8v48"/></svg><div><h3>Carrelage</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Carrelage</h3><p>Pose de carrelage au sol et au mur, faïence de salle d'eau, mosaïque et grands formats.</p><a href="prestations.html#carrelage">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="44" height="48" rx="2"/><path d="M10 20l12-12M10 34l26-26M10 48l40-40M22 56l32-32M36 56l18-18"/></svg><div><h3>Revêtements sol & mur</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Revêtements sol & mur</h3><p>Parquet, papier peint, panneaux 3D et tasseaux décoratifs pour habiller vos murs et vos sols.</p><a href="prestations.html#revetements">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d1" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="6" width="32" height="52" rx="1"/><rect x="21" y="11" width="22" height="18"/><rect x="21" y="34" width="22" height="18"/><circle cx="42" cy="32" r="1.6" fill="currentColor"/></svg><div><h3>Menuiserie</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Menuiserie</h3><p>Portes, placards, étagères, plafonds et habillages bois réalisés sur mesure.</p><a href="prestations.html#menuiserie">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d2" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 42a14 14 0 1 1 16 0v6H24z"/><path d="M26 54h12M28 59h8"/><path d="M33 20l-5 10h8l-5 10"/></svg><div><h3>Électricité & éclairage</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Électricité & éclairage</h3><p>Installation des prises, interrupteurs, spots encastrés, rubans LED et luminaires.</p><a href="prestations.html#electricite">En savoir plus</a></div>
-  </div>
-</div><div class="carte-retour revele d3" tabindex="0">
-  <div class="carte-retour-interieur">
-    <div class="face face-avant"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h22a8 8 0 0 1 8 8v4"/><path d="M8 14h22a16 16 0 0 1 16 16v4"/><path d="M34 34h16"/><path d="M42 42c0 4-3 6-3 9a3 3 0 0 0 6 0c0-3-3-5-3-9z"/><path d="M8 10v16"/></svg><div><h3>Plomberie</h3><small><span class="indic-survol">Survolez pour en savoir plus</span><span class="indic-tactile">Touchez pour en savoir plus</span></small></div></div>
-    <div class="face face-arriere"><h3>Plomberie</h3><p>Installation et rénovation de salles d'eau, cuisines et WC : sanitaires, robinetterie, évacuations.</p><a href="prestations.html#plomberie">En savoir plus</a></div>
-  </div>
+    <div class="grille-prestations"><div class="carte-presta revele" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 44V22a14 14 0 0 1 28 0v26"/><path d="M14 22l-7 14h14z" fill="currentColor"/><path d="M36 48h12l-6-5z" fill="currentColor"/><path d="M6 56h52"/></svg><h3>Décoration intérieure</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Décoration intérieure</h3><p>Couleurs, mobilier, luminaires et accessoires : nous composons une ambiance qui vous ressemble, de la chambre au salon.</p><a class="btn btn-blanc-contour" href="prestations.html#decoration">En savoir plus</a></div>
+</div><div class="carte-presta revele d1" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="36" height="14" rx="2"/><path d="M46 15h6v12H30v8"/><rect x="26" y="35" width="8" height="21" rx="2"/></svg><h3>Peinture</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Peinture</h3><p>Peinture intérieure et extérieure, enduits et finitions décoratives, avec une préparation soignée des supports.</p><a class="btn btn-blanc-contour" href="prestations.html#peinture">En savoir plus</a></div>
+</div><div class="carte-presta revele d2" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h52"/><path d="M10 12v6h44v-6"/><path d="M18 18v5h28v-5"/><path d="M24 30v26M40 30v26M24 43h16"/><circle cx="32" cy="27" r="2" fill="currentColor"/></svg><h3>Placo & faux plafonds</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Placo & faux plafonds</h3><p>Faux plafonds suspendus, corniches lumineuses, niches TV et cloisons en plaques de plâtre.</p><a class="btn btn-blanc-contour" href="prestations.html#placo">En savoir plus</a></div>
+</div><div class="carte-presta revele d3" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="2"/><path d="M8 24h48M8 40h48M24 8v48M40 8v48"/></svg><h3>Carrelage</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Carrelage</h3><p>Pose de carrelage au sol et au mur, faïence de salle d'eau, mosaïque et grands formats.</p><a class="btn btn-blanc-contour" href="prestations.html#carrelage">En savoir plus</a></div>
+</div><div class="carte-presta revele" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="44" height="48" rx="2"/><path d="M10 20l12-12M10 34l26-26M10 48l40-40M22 56l32-32M36 56l18-18"/></svg><h3>Revêtements sol & mur</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Revêtements sol & mur</h3><p>Parquet, papier peint, panneaux 3D et tasseaux décoratifs pour habiller vos murs et vos sols.</p><a class="btn btn-blanc-contour" href="prestations.html#revetements">En savoir plus</a></div>
+</div><div class="carte-presta revele d1" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="6" width="32" height="52" rx="1"/><rect x="21" y="11" width="22" height="18"/><rect x="21" y="34" width="22" height="18"/><circle cx="42" cy="32" r="1.6" fill="currentColor"/></svg><h3>Menuiserie</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Menuiserie</h3><p>Portes, placards, étagères, plafonds et habillages bois réalisés sur mesure.</p><a class="btn btn-blanc-contour" href="prestations.html#menuiserie">En savoir plus</a></div>
+</div><div class="carte-presta revele d2" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 42a14 14 0 1 1 16 0v6H24z"/><path d="M26 54h12M28 59h8"/><path d="M33 20l-5 10h8l-5 10"/></svg><h3>Électricité & éclairage</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Électricité & éclairage</h3><p>Installation des prises, interrupteurs, spots encastrés, rubans LED et luminaires.</p><a class="btn btn-blanc-contour" href="prestations.html#electricite">En savoir plus</a></div>
+</div><div class="carte-presta revele d3" tabindex="0">
+  <div class="carte-face"><svg class="icone" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h22a8 8 0 0 1 8 8v4"/><path d="M8 14h22a16 16 0 0 1 16 16v4"/><path d="M34 34h16"/><path d="M42 42c0 4-3 6-3 9a3 3 0 0 0 6 0c0-3-3-5-3-9z"/><path d="M8 10v16"/></svg><h3>Plomberie</h3><small><span class="indic-survol">Survolez pour plus d'infos</span><span class="indic-tactile">Touchez pour plus d'infos</span></small></div>
+  <div class="carte-detail"><h3>Plomberie</h3><p>Installation et rénovation de salles d'eau, cuisines et WC : sanitaires, robinetterie, évacuations.</p><a class="btn btn-blanc-contour" href="prestations.html#plomberie">En savoir plus</a></div>
 </div></div>
     <div class="bas-section"><a class="lien-fleche" href="prestations.html">Toutes nos prestations</a></div>
   </div>
 </section>
 
-<div class="compteurs">
+<section class="compteurs">
+  <img class="parallaxe" src="img/salon-cheminee.jpg" alt="" loading="lazy">
+  <div class="compteurs-voile"></div>
   <div class="conteneur">
-    <div class="compteur"><b data-cible="5">5</b><span>Ans d'expérience</span></div>
-    <div class="compteur"><b data-cible="50" data-suffixe="+">50+</b><span>Projets réalisés</span></div>
-    <div class="compteur"><b data-cible="100" data-suffixe="+">100+</b><span>Fournisseurs partenaires</span></div>
+    <div class="compteurs-tete revele">
+      <p class="surtitre">À la recherche d'un décorateur à Abidjan ?</p>
+      <h2>Découvrez l'offre de <em>JJ Fait la Déco</em></h2>
+      <a class="btn btn-blanc-contour" href="prestations.html">Toutes nos prestations</a>
+    </div>
+    <div class="compteurs-grille">
+      <div class="compteur"><b data-cible="5">5</b><span>Ans d'expérience</span></div>
+      <div class="compteur"><b data-cible="50" data-suffixe="+">50+</b><span>Projets réalisés</span></div>
+      <div class="compteur"><b data-cible="100" data-suffixe="+">100+</b><span>Fournisseurs partenaires</span></div>
+    </div>
   </div>
-</div>
+</section>
 
 <section>
   <div class="conteneur">
     <div class="entete-section revele">
       <p class="surtitre">Nos derniers chantiers</p>
-      <h2 class="titre-section">Nos <em>réalisations</em></h2>
+      <h2 class="titre-section">Nos <span class="souligne">réalisations<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C60 6 120 5 170 8s90 6 126 2"/></svg></span></h2>
     </div>
     <div class="grille-real">
       <button type="button" class="tuile revele" data-src="img/chambre-mur-3d.jpg" data-cat="chambres" aria-label="Agrandir : Chambre parentale"><img src="img/chambre-mur-3d.jpg" alt="Chambre avec mur 3D, lustre à globes et appliques" loading="lazy"><span class="legende"><b>Chambre parentale</b><span>Décoration</span></span></button><button type="button" class="tuile revele d1" data-src="img/bar-sous-escalier.jpg" data-cat="salons" aria-label="Agrandir : Bar sous l'escalier"><img src="img/bar-sous-escalier.jpg" alt="Bar en placo sous l'escalier avec LED et réfrigérateur rouge" loading="lazy"><span class="legende"><b>Bar sous l'escalier</b><span>Placo & éclairage</span></span></button><button type="button" class="tuile revele d2" data-src="img/cuisine-comptoir.jpg" data-cat="salons" aria-label="Agrandir : Cuisine ouverte"><img src="img/cuisine-comptoir.jpg" alt="Cuisine avec comptoir en marbre noir et tabourets" loading="lazy"><span class="legende"><b>Cuisine ouverte</b><span>Aménagement</span></span></button><button type="button" class="tuile revele" data-src="img/studio-violet.jpg" data-cat="chambres" aria-label="Agrandir : Studio meublé"><img src="img/studio-violet.jpg" alt="Studio aux fauteuils violets et éclairage LED violet" loading="lazy"><span class="legende"><b>Studio meublé</b><span>Décoration</span></span></button><button type="button" class="tuile revele d1" data-src="img/salle-eau-mosaique.jpg" data-cat="salles-eau" aria-label="Agrandir : Salle d'eau"><img src="img/salle-eau-mosaique.jpg" alt="Salle d'eau en mosaïque miroir avec miroir rond lumineux" loading="lazy"><span class="legende"><b>Salle d'eau</b><span>Carrelage & plomberie</span></span></button><button type="button" class="tuile revele d2" data-src="img/salon-cheminee.jpg" data-cat="salons" aria-label="Agrandir : Salon cosy"><img src="img/salon-cheminee.jpg" alt="Salon avec niche TV et cheminée électrique" loading="lazy"><span class="legende"><b>Salon cosy</b><span>Placo & décoration</span></span></button>
@@ -240,6 +240,27 @@
   </div>
 </section>
 
+<section class="catalogue" id="catalogue">
+  <div class="conteneur">
+    <div class="catalogue-bloc">
+      <a class="catalogue-apercu revele" href="catalogue-jjfait-la-deco.pdf" download aria-label="Télécharger le catalogue PDF">
+        <span class="catalogue-page p3"></span><span class="catalogue-page p2"></span>
+        <img src="img/catalogue-apercu.jpg" alt="Couverture du catalogue JJ Fait la Déco" loading="lazy">
+      </a>
+      <div class="catalogue-texte revele d1">
+        <p class="surtitre">Notre catalogue</p>
+        <h2 class="titre-section">Toutes nos créations <span class="souligne">dans votre poche<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C60 6 120 5 170 8s90 6 126 2"/></svg></span></h2>
+        <p class="chapeau">Prestations, photos de chantiers, méthode de travail et contacts : téléchargez le catalogue de JJ Fait la Déco et partagez-le sur WhatsApp en un clic.</p>
+        <ul class="liste-coches"><li>Nos 8 savoir-faire</li><li>Galerie de réalisations</li><li>Boutiques &amp; espaces pro</li><li>Contacts et QR code WhatsApp</li></ul>
+        <div class="hero-actions">
+          <a class="btn btn-plein" href="catalogue-jjfait-la-deco.pdf" download><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 8v32M20 28l12 12 12-12"/><path d="M10 46v8h44v-8"/></svg> Télécharger le catalogue</a>
+          <span class="catalogue-poids">PDF · 1,3 Mo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta">
   <svg class="cta-arc" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 300V150a130 130 0 0 1 260 0v150"/></svg>
   <div class="conteneur">
@@ -263,7 +284,7 @@
         <p style="margin-top:18px;max-width:30ch">Décoration, aménagement et rénovation d'intérieur à Abidjan et partout en Côte d'Ivoire.</p>
         <div class="reseaux"><a href="https://www.facebook.com/profile.php?id=61574933570525" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a><a href="https://wa.me/2250708432774?text=Bonjour%20JJ%20Fait%20la%20D%C3%A9co%2C%20j%27aimerais%20un%20devis%20pour%20mon%20projet." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.2-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.2c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.1-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.2 9.8 10 5.1 16 5.1s10.8 4.7 10.8 10.5S22 26.2 16 26.2zm5.9-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a></div>
       </div>
-      <div><h4>Le site</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="prestations.html">Prestations</a></li><li><a href="realisations.html">Réalisations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Le site</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="prestations.html">Prestations</a></li><li><a href="realisations.html">Réalisations</a></li><li><a href="contact.html">Contact</a></li><li><a href="catalogue-jjfait-la-deco.pdf" download>Catalogue PDF</a></li></ul></div>
       <div><h4>Prestations</h4><ul><li><a href="prestations.html#decoration">Décoration intérieure</a></li><li><a href="prestations.html#peinture">Peinture</a></li><li><a href="prestations.html#placo">Placo & faux plafonds</a></li><li><a href="prestations.html#carrelage">Carrelage</a></li><li><a href="prestations.html#revetements">Revêtements sol & mur</a></li><li><a href="prestations.html#menuiserie">Menuiserie</a></li></ul></div>
       <div><h4>Contact</h4><ul>
         <li><a href="tel:+2250708432774">+225 07 08 43 27 74</a></li>
