@@ -23,3 +23,7 @@ AJOUTER UNE VISITE 360°
 1. Mettre les panoramas (un .jpg par pièce) dans le dossier img/visites/
 2. Ouvrir js/visites.js et remplir la liste en suivant le modèle du fichier.
 La section "Visitez nos chantiers" apparaît automatiquement sur l'accueil dès qu'une visite est renseignée.
+
+AJOUTER UNE RÉSIDENCE EN LOCATION
+Envoyer à Claude les photos, le nom, le prix par jour, l'adresse et les équipements : la fiche
+et son formulaire de réservation WhatsApp sont générés automatiquement sur la page Location meublée.
